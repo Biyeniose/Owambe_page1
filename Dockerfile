@@ -8,9 +8,12 @@ WORKDIR /app
 COPY package*.json ./
 
 # Install dependencies
+RUN npm install expo@latest
+RUN npx expo install expo-router
 RUN npm install -g expo-cli
 RUN npm install --global @expo/ngrok@^4.1.0
 RUN npm install
+
 
 # Copy the rest of the application code
 COPY . .
